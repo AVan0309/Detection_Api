@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 在以mapper接口文件调用sql时，应指向对应的dao层接口-->
+<!--直接使用mapper.xml文件中的sql时，可以自定义，只要不与现存的namespace冲突即可-->
+<mapper namespace="com.njau.wens_detection_api.mapper.AddInputInfoMapper">
+    <insert id="addinputInfo" parameterType="com.njau.wens_detection_api.entity.InputInfo">
+        insert into input_info (A4, M4, AFI, FI, A, DW, HW, AWI, AWE, C, AWC, J,D,P,TZ1,TZ2,U,W,WAEW,PAEW,day,T,H,CO2,NH3,date,time)
+        values (#{A4}, #{M4}, #{AFI}, #{FI}, #{A}, #{DW}, #{HW}, #{AWI}, #{AWE}, #{C}, #{AWC}, #{J},#{D},#{P},#{TZ1},#{TZ2},#{U},#{W},#{WAEW},#{PAEW},#{day},#{T},#{H},#{CO2},#{NH3},curdate(),CURRENT_TIMESTAMP())
+    </insert>
+</mapper>
